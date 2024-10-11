@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "638124934146",
+    "project_id": "restaurante-dbc6e",
+    "storage_bucket": "restaurante-dbc6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:638124934146:android:851e2aa3370bc663e4531b",
+        "android_client_info": {
+          "package_name": "com.example.learning_flutter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEH9LpEl6-7AhUVr0BCTvZApe9jiNxuNA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
