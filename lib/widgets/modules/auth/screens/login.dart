@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-
+import '../../../../kernel/widgets/custom_text_field_password.dart';
 class Login extends StatefulWidget {
   const Login({super.key});
 
@@ -11,7 +11,6 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  bool _isObscure = true;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String? validateEmail(String? value) {
   final RegExp emailRegExp = RegExp(
@@ -60,21 +59,10 @@ class _LoginState extends State<Login> {
                 keyboardType: TextInputType.emailAddress,
               ),
               const SizedBox(height: 16,),
-              TextFormField(
-                validator: validatePassword,
-                controller: _passwordController,
-                obscureText: _isObscure,
-                decoration: InputDecoration(
-                  hintText: 'Contraseña',
-                  label: const Text('Contraseña'),
-                  suffixIcon: IconButton(onPressed: (){
-                    setState(() {
-                      _isObscure = !_isObscure;
-                    });
-                  },
-                  icon: Icon(_isObscure ? Icons.visibility : Icons.visibility_off),),
-              )),
-              const SizedBox(height: 32,),
+              TextFieldPassword(
+                controller: _passwordController
+              ),
+              const SizedBox(height: 16,),
               SizedBox(
                 height: 48,
                 width: double.infinity,
@@ -105,6 +93,11 @@ class _LoginState extends State<Login> {
                   ),
                   child: const Text('Login'),
                 ),
+              ),
+              const SizedBox(height: 8,),
+              InkWell(
+                onTap: () => Navigator.pushNamed(context, '/register'),
+                child: const Text('Registrarse', style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),),
               )
             ],
           ),

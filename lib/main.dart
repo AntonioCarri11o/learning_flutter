@@ -4,6 +4,7 @@ import 'package:learning_flutter/navigation/navigation.dart';
 import 'package:learning_flutter/navigation/profile.dart';
 import 'package:learning_flutter/navigation/reservations.dart';
 import 'package:learning_flutter/navigation/top.dart';
+import 'package:learning_flutter/widgets/modules/auth/screens/create_account.dart';
 import 'package:learning_flutter/widgets/modules/auth/screens/login.dart';
 import 'package:learning_flutter/widgets/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,6 +29,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const Login(),
+        '/register': (context) => const CreateAccount(),
         '/menu': (context) => const Navigation(),
         '/home': (context) => const Home(),
         '/top': (context) => const Top(),
