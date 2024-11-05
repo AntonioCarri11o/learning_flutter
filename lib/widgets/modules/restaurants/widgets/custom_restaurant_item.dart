@@ -16,19 +16,26 @@ class CustomRestaurantItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return RestaurantDetails(id_restaurant: restaurant.name);
+          return RestaurantDetails(restaurant: restaurant);
         }));
       },
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(restaurant.images[0], width: 60, height: 60,),
-          const SizedBox(width: 8,),
+          Image.network(
+            restaurant.images[0],
+            width: 60,
+            height: 60,
+          ),
+          const SizedBox(
+            width: 8,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                restaurant.name, style: const TextStyle(fontWeight: FontWeight.bold),
+                restaurant.name,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               Text(restaurant.description),
             ],
@@ -46,4 +53,3 @@ class CustomRestaurantItem extends StatelessWidget {
     );
   }
 }
-
